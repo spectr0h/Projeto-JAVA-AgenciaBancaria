@@ -8,7 +8,7 @@ import java.util.Date;
 public class Utils {
 	
 	static NumberFormat formatandoValores = new DecimalFormat("R$ #,##0.00");
-	static SimpleDateFormat formatandoData = new SimpleDateFormat("dd/MM/yyyy");
+	static SimpleDateFormat formatandoData = new SimpleDateFormat("dd/MM/yyyy hh:mm");
 	
 	public static String dateToString(Date data) {
 		return formatandoData.format(data);

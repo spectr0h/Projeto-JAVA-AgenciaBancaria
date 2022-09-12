@@ -74,7 +74,7 @@ public class AgenciaBancaria {
         Conta conta = new Conta(cliente);
 
         contasBancarias.add(conta);
-        System.out.println("--- Sua conta foi criada com sucesso! ---");
+        System.out.println("Sua conta foi criada com sucesso!");
 
         operacoes();
 
@@ -93,17 +93,17 @@ public class AgenciaBancaria {
     }
 
     public static void depositar() {
-        System.out.println("Número da conta: ");
+        System.out.println("Número da conta:");
         int numeroConta = input.nextInt();
         Conta conta = encontrarConta(numeroConta);
 
         if(conta != null) {
-            System.out.println("Qual valor deseja depositar? ");
+            System.out.println("Qual valor deseja depositar?");
             Double valorDeposito = input.nextDouble();
 
             conta.depositar(valorDeposito);
         }else {
-            System.out.println("--- Conta não encontrada ---");
+            System.out.println("Conta não encontrada.");
         }
 
         operacoes();
@@ -111,19 +111,19 @@ public class AgenciaBancaria {
     }
 
     public static void sacar() {
-        System.out.println("Número da conta: ");
+        System.out.println("Número da conta:");
         int numeroConta = input.nextInt();
 
         Conta conta = encontrarConta(numeroConta);
 
         if(conta != null) {
-            System.out.println("Qual valor deseja sacar? ");
+            System.out.println("Qual valor deseja sacar?");
             Double valorSaque = input.nextDouble();
 
             conta.sacar(valorSaque);
-            System.out.println("--- Saque realizado com sucesso! ---");
+            System.out.println("Saque realizado com sucesso!");
         }else {
-            System.out.println("--- Conta não encontrada ---");
+            System.out.println("Conta não encontrada.");
         }
 
         operacoes();
@@ -131,29 +131,29 @@ public class AgenciaBancaria {
     }
 
     public static void transferir() {
-        System.out.println("Número da conta que vai enviar a transferência: ");
+        System.out.println("Número da conta que vai enviar a transferência:");
         int numeroContaRemetente = input.nextInt();
 
         Conta contaRemetente = encontrarConta(numeroContaRemetente);
 
         if(contaRemetente != null) {
-            System.out.println("Número da conta do destinatário: ");
+            System.out.println("Número da conta do destinatário:");
             int numeroContaDestinatario = input.nextInt();
 
             Conta contaDestinatario = encontrarConta(numeroContaDestinatario);
 
             if(contaDestinatario != null) {
-                System.out.println("Valor da transferência: ");
+                System.out.println("Valor da transferência:");
                 Double valor = input.nextDouble();
 
                 contaRemetente.transferencia(contaDestinatario, valor);
 
             }else {
-                System.out.println("--- A conta para depósito não foi encontrada ---");
+                System.out.println("A conta para depósito não foi encontrada.");
             }
 
         }else {
-            System.out.println("--- Conta para transferência não encontrada ---");
+            System.out.println("Conta para transferência não encontrada.");
         }
         operacoes();
     }
@@ -164,7 +164,7 @@ public class AgenciaBancaria {
                 System.out.println(conta);
             }
         }else {
-            System.out.println("--- Não há contas cadastradas ---");
+            System.out.println("Não há contas cadastradas!");
         }
 
         operacoes();

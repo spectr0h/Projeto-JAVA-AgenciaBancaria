@@ -46,13 +46,13 @@ public class Conta {
                 "\nCPF: " + this.pessoa.getCpf() +
                 "\nEmail: " + this.pessoa.getEmail() +
                 "\nSaldo: " + Utils.doubleToString(this.getSaldo()) +
+                "\nCriada em: " + Utils.dateToString(this.pessoa.getAccountCreationDate()) +
                 "\n" ;
     }
 
     public void depositar(Double valor) {
         if(valor > 0) {
             setSaldo(getSaldo() + valor);
-            //this.saldo = this.getSaldo() + valor;
             System.out.println("Seu depósito foi realizado com sucesso!");
         }else {
             System.out.println("Não foi possível realizar o depósito!");

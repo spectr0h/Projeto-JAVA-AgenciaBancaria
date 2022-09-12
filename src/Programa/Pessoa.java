@@ -1,46 +1,62 @@
 package Programa;
 
+import java.util.Date;
+
+import utilitarios.Utils;
+
 public class Pessoa {
 
-	private static int counter = 1;
-	
-	private String nome;
-	private String cpf;
-	private String email;
-	
-	
+    private static int counter = 1;
 
-	public Pessoa(String nome, String cpf, String email) {
-		super();
-		this.nome = nome;
-		this.cpf = cpf;
-		this.email = email;
-		counter += 1;
-	}
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getCPF() {
-		return cpf;
-	}
-	public void setcpf(String cpf) {
-		this.cpf = cpf;
-	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
-	
-	public String toString() {
-		return "\nNome: " + this.getNome() +
-			   "\nCPF: " + this.getCPF() +
-			   "\nEmail " + this.getEmail();
-	}
-	
-	
+    private int numeroPessoa ;
+    private String name;
+    private String cpf;
+    private String email;
+    private Date accountCreationDate;
+
+    public Pessoa() { }
+
+    public Pessoa(String name, String cpf, String email) {
+        this.numeroPessoa = Pessoa.counter;
+        this.name = name;
+        this.cpf = cpf;
+        this.email = email;
+        this.accountCreationDate = new Date();
+        Pessoa.counter += 1;
+    }
+
+    public int getNumeroPessoa() {
+        return this.numeroPessoa;
+    }
+
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getCpf() {
+        return cpf;
+    }
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+    public String getEmail() {
+        return email;
+    }
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    public Date getAccountCreationDate() {
+        return this.accountCreationDate;
+    }
+
+    public String toString() {
+        return  "\nName: " + this.getName() +
+                "\nCPF: " + this.getCpf() +
+                "\nEmail: " + this.getEmail() +
+                "\nAccount Creation Date: " + Utils.dateToString(this.getAccountCreationDate());
+    }
+
+
 }

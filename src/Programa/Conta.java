@@ -46,7 +46,7 @@ public class Conta {
                 "\nCPF: " + this.pessoa.getCpf() +
                 "\nEmail: " + this.pessoa.getEmail() +
                 "\nSaldo: " + Utils.doubleToString(this.getSaldo()) +
-                "\nCriada em: " + Utils.dateToString(this.pessoa.getAccountCreationDate()) +
+                "\nData criação: " + Utils.dateToString(this.pessoa.getAccountCreationDate()) +
                 "\n" ;
     }
 
